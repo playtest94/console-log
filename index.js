@@ -15,8 +15,7 @@ app.post('/log', (req, res) => {
 
     if (req.body.name === "location") {
         const loc = req?.body?.location
-
-        console.table(loc)
+        console.log(`${loc.createdAt} ${loc.uuid.substring(item.uuid.length - 8)} ${loc.isMoving ? "moving" : "stationary"} ${loc.appState}`)
     } else {
         console.log("<===>", req?.body)
     }
