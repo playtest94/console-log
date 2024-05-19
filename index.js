@@ -1,15 +1,20 @@
 const express = require('express')
+const bodyParser = require('body-parser');
+
 const app = express()
 const port = 3000
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     return res.json({ message: "ok" })
 })
 
 app.post('/log', (req, res) => {
-    console.log("===", req.body.name)
+    console.log("===>", req?.body?.name)
     if (req.body.name === "location") {
-        console.log("location", req.body)
+        console.log("location", req?.body)
     }
     return res.json({ message: "ok" })
 })
