@@ -16,6 +16,8 @@ app.post('/log', (req, res) => {
     if (req.body.name === "location") {
         console.log("=========")
         console.table(req?.body?.location)
+    } else {
+        console.log("<===>", req?.body)
     }
     return res.json({ message: "ok" })
 })
