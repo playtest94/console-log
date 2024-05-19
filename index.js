@@ -12,10 +12,11 @@ app.get('/', (req, res) => {
 })
 
 app.post('/log', (req, res) => {
-    console.log("===>", req?.body?.name)
+
     if (req.body.name === "location") {
-        console.log("=========")
-        console.table(req?.body?.location)
+        const loc = req?.body?.location
+
+        console.table(loc)
     } else {
         console.log("<===>", req?.body)
     }
