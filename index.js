@@ -13,12 +13,13 @@ app.get('/', (req, res) => {
 
 app.post('/log', (req, res) => {
 
-    if (req.body.name === "location") {
-        const loc = req?.body?.location
-        console.log(`${loc.createdAt} ${loc.uuid.substring(loc.uuid.length - 8)} ${loc.isMoving ? "moving" : "stationary"} ${loc.appState}`)
-    } else {
-        console.log("<===>", req?.body)
-    }
+    console.log("<===>", req?.body?.name)
+    // if (req.body.name === "location") {
+    //     const loc = req?.body?.location
+    //     console.log(`${loc.createdAt} ${loc.uuid.substring(loc.uuid.length - 8)} ${loc.isMoving ? "moving" : "stationary"} ${loc.appState}`)
+    // } else {
+    //     console.log("<===>", req?.body)
+    // }
     return res.json({ message: "ok" })
 })
 
